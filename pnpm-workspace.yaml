@@ -35,7 +35,3 @@ blockExoticSubdeps: true
 # Always save dependencies as exact versions and to devDependencies by default.
 saveExact: true
 saveDev: true
-allowBuilds:
-  esbuild: set this to true or false
-  sharp: set this to true or false
-  workerd: set this to true or false
