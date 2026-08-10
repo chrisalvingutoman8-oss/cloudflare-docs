@@ -13,9 +13,6 @@ minimumReleaseAgeExclude:
   - miniflare
   - workerd
   - "@cloudflare/workers-types"
-  # Rolldown 1.2.3 contains the native memory fix tested by this branch.
-  - rolldown@1.2.3
-  - "@rolldown/*"
 
 overrides:
   # rolldown 1.1.x has a memory leak (rolldown/rolldown#10554) that causes
@@ -31,6 +28,20 @@ overrides:
 # Prevent transitive dependencies from using exotic sources (git repos, direct tarball URLs).
 # Only direct dependencies may use exotic sources.
 blockExoticSubdeps: true
+
+# Explicit allowlist of packages permitted to run install scripts.
+# These are well-known packages that require build scripts to download platform-specific binaries.
+allowBuilds:
+  esbuild: true
+  sharp: true
+  tldjs: true
+  workerd: true
+  # Transitive deps of @flue/runtime and agents — native binaries not needed by this repo
+  "@google/genai": false
+  "@mongodb-js/zstd": false
+  core-js-pure: false
+  node-liblzma: false
+  protobufjs: false
 
 # Always save dependencies as exact versions and to devDependencies by default.
 saveExact: true
