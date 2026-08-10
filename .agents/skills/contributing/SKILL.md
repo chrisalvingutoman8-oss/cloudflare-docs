@@ -1,6 +1,6 @@
 ---
 name: contributing
-description: Use when making any change to the cloudflare-docs repository — writing or updating MDX pages, adding changelog entries, choosing components, structuring information, or opening a pull request. Covers the full contribution workflow for developers.cloudflare.com.
+description: Use when contributing to the Cloudflare Docs repository — writing or editing documentation pages, choosing content types or components, adding changelog entries, reviewing docs, or learning how to contribute.
 ---
 
 # Contributing to Cloudflare Docs
@@ -43,10 +43,8 @@ Find your task and read the listed reference(s). Paths are relative to this skil
 | Look up a component's props and examples       | `.agents/references/components.md`                                                                       |
 | Add or edit a changelog entry                  | `references/changelog.md`                                                                                |
 | Review docs / post PR suggestions              | `references/reviewing-docs.md`                                                                           |
-| Review the code examples in docs               | `references/code-review/index.md`                                                                        |
-| Create or edit a pull request                  | `references/pr.md`                                                                                       |
 
-The authoring workflow in `references/writing-docs.md` ties these together: gather context → locate where the page belongs → pick a content type → draft against the style guide → choose components for each piece of data → validate → open a PR.
+The authoring workflow in `references/writing-docs.md` ties these together: gather context → locate where the page belongs → pick a content type → draft against the style guide → choose components for each piece of data → validate.
 
 ## Validate before you finish
 

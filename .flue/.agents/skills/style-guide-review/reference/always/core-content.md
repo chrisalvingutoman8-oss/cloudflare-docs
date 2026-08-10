@@ -16,7 +16,7 @@ description: Always load for any MDX file with added content lines.
 - If prose uses `etc.` → **suggestion**: replace with a complete list or `and so on`.
 - If prose uses LLM-filler phrases (`Note that`, `It is worth noting that`, `It is important to note that`, `Please note that`, `Keep in mind that`) → **suggestion**: remove the filler and state the fact directly.
 - If prose uses passive voice where active voice would be clearer → **suggestion**: rewrite in active voice.
-- If a list or sentence has three or more items without an Oxford comma before `and` or `or` → **suggestion**: add the serial comma.
+- If a sentence has a list of three or more items joined by `and` or `or`, and the comma is **missing** before the final conjunction → **suggestion**: add the serial comma. Before flagging, verify the comma is actually absent. The serial comma goes immediately before the final top-level `and`/`or` that separates the last item from the earlier items. Do not flag if the comma is already present. Example to NOT flag: `shared with the wrong audience, exposed in client code or a screenshare, or need to be refreshed` — the comma before the final `or` is already there. Example to flag: `Workers, KV and D1` — no comma before `and`.
 - If prose uses a semicolon to join two independent clauses → **suggestion**: break into two sentences.
 
 ---
@@ -52,6 +52,22 @@ description: Always load for any MDX file with added content lines.
 
 - If prose uses `click` for a UI element → **suggestion**: use `select`.
 - If an example domain is a real-looking but non-reserved domain (`yourdomain.com`, `mysite.com`) → **suggestion**: use `example.com`, `example.org`, or `myappexample.com` instead.
+
+---
+
+## Marketing Language
+
+**Suggestion** when prose contains any of these phrases: `Perfect for`, `Best for`, `Best-in-class`, `Empowers you to`, `Enables you to`, `Essential for`, `Critical for`, or `Modern <noun>` / `Built for <noun>` patterns → replace with direct language that states what the thing actually does. Exception: inside code blocks or backtick spans.
+
+---
+
+## Time-Sensitive Content
+
+These rules fire only on files **outside** `src/content/changelog/` paths. Exceptions: code blocks, backtick spans, frontmatter fields (e.g. `reviewed:`, `compatibility_date:`), URLs, and example data.
+
+- If prose contains `Coming soon`, `recently added`, `newly available`, `now available`, or `just released` → **suggestion**: remove the phrase; docs must read as timeless.
+- If prose contains a month name (`January`, `February`, `March`, `April`, `May`, `June`, `July`, `August`, `September`, `October`, `November`, `December`) → **suggestion**: remove or rewrite without a month reference.
+- If prose contains a four-digit year (e.g. `2024`, `2025`) → **suggestion**: remove or rewrite without the year.
 
 ---
 

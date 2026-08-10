@@ -42,7 +42,7 @@ Read `choosing-components.md`. It starts with a reverse-lookup table (the data y
 Mandatory mappings (do not use bare fences for these):
 
 - Workers JS/TS → `TypeScriptExample`
-- Wrangler config → `WranglerConfig` (TOML input, `$today` for `compatibility_date`)
+- Wrangler config → `WranglerConfig` (TOML or JSON input, `$today` for `compatibility_date`)
 - Package install/exec → `PackageManagers`
 - Multi-step procedure → `Steps`
 - Dashboard navigation step → `DashButton`
@@ -62,7 +62,7 @@ Run the validation commands from `SKILL.md` (`check`, local `build`, `format`, p
 
 ## 8. Open a pull request
 
-When the change is ready, follow `pr.md` to create the PR (drafts only, `[Product]` title convention, body from the repo template).
+When the change is ready, load the `pr` skill to create the PR (drafts only, `[Product]` title convention, body from the repo template).
 
 ## Editing existing pages
 
