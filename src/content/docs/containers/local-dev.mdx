@@ -44,6 +44,12 @@ out old container images (using `docker image prune` or similar) to reduce disk 
 
 :::
 
+## FUSE support
+
+When you run `wrangler dev`, Wrangler enables Filesystem in Userspace (FUSE) for local containers when it can safely grant the required privileges. Wrangler enables FUSE when the local Docker daemon runs inside a virtual machine (VM). This includes Docker engines on macOS and through Windows Subsystem for Linux (WSL). On Linux, Wrangler also enables FUSE for local rootless Docker when `/dev/fuse` is available.
+
+Rootful Docker on Linux does not support FUSE by default during local development. If the Docker daemon does not meet these conditions, or Wrangler cannot inspect its endpoint, Wrangler disables privileged container features and logs a warning.
+
 ## Iterating on Container code
 
 When you develop with Wrangler or Vite, your Worker's code is automatically reloaded each time you save a change,

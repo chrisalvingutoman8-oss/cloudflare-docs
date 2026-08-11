@@ -1,0 +1,15 @@
+---
+title: Use FUSE in local Containers development
+description: Wrangler enables FUSE for local Containers when Docker runs rootless or inside a virtual machine.
+products:
+  - containers
+date: 2026-08-11
+---
+
+`wrangler dev` now enables Filesystem in Userspace (FUSE) for local Containers when the Docker daemon meets its safety requirements. This lets you test FUSE-based workloads locally without configuring Docker privileges manually.
+
+Wrangler enables FUSE when the local Docker daemon runs inside a virtual machine (VM). This includes Docker engines on macOS and through Windows Subsystem for Linux (WSL). On Linux, Wrangler also enables FUSE for local rootless Docker when `/dev/fuse` is available.
+
+If the Docker daemon does not meet these conditions, or Wrangler cannot inspect its endpoint, Wrangler disables privileged container features and logs a warning. Rootful Docker on Linux does not support FUSE by default during local development.
+
+For requirements and troubleshooting, refer to [FUSE support during local development](/containers/local-dev/#fuse-support). For a complete example, refer to [Mount R2 buckets with FUSE](/containers/examples/r2-fuse-mount/).
