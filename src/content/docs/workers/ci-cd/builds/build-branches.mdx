@@ -30,4 +30,8 @@ To enable or disable preview builds:
 
 When enabled, every push to a branch that is not your production branch triggers a preview build. Workers Builds runs the [build command](/workers/ci-cd/builds/configuration/#deploy-command), followed by the [Preview command](/workers/ci-cd/builds/configuration/#preview-command).
 
+### Existing Workers connected to Builds
+
+If your Worker is already connected to a Git repository, you will see an **Enable Worker Previews** banner in **Settings** > **Build**. Click **Enable** to switch your preview command from `npx wrangler deploy` to `npx wrangler preview`. You can customize this command in the modal that appears.
+
 For Preview-specific settings such as variables, secrets, and bindings, refer to [Previews](/workers/previews/configuration/).
